@@ -34,7 +34,9 @@ def main():
 
     for key, value in test_cases.items():
         encryption = encrypt(key, value[0])
-        print(f'Key: {key}, Value: {value}, Encryption: {encrypt(key, value[0])}, Comparaison: {encryption == value[1]} \n')
+        print(f'Encryption process: message: {key}, key & final_message: {value}, Encryption: {encryption}, Comparaison: {encryption == value[1]} \n')
+        decryption = decrypt(encryption, value[0])
+        print(f'Decryption process: key & final_message:: {value}, message: {key.lower()}, Decryption: {decryption}, Comparaison: {decryption == key.lower()} \n')
 
     # encryption = encrypt("HELLO", test_cases["HELLO"][0])
     # print(encryption)
